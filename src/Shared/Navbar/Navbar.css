@@ -1,0 +1,50 @@
+.fixed {
+    background-color: white; /* Background color when sticky */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: all 0.3s ease; /* Smooth transition */
+    z-index:999;
+  }
+  .custom-drawer {
+    background: linear-gradient(180deg, #fff, #f0f4f8);
+    font-family: 'Poppins', sans-serif;
+  }
+  .okokok{
+    z-index: 999 !important;
+  }
+  .custom-menu {
+    background-color: transparent;
+    padding: 1rem 0; /* More padding for better spacing */
+  }
+  
+  .custom-menu-item {
+ 
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+  
+  .drawer-link {
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .drawer-link:hover {
+    color: #f12711;
+    transform: translateX(10px);
+  }
+  
+  .social-icons {
+    margin-top: 1.5rem;
+  }
+  
+  .social-link {
+    transition: transform 0.3s ease;
+  }
+  
+  .social-link:hover {
+    transform: scale(1.2);
+  }
+  .drawer-logo{
+    width:120px ;
+    
+  }
