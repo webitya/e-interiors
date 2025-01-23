@@ -124,7 +124,7 @@ const Navbar = () => {
     ))}
   </Menu>
 
-  <div className="social-icons flex space-x-6 mt-8 justify-center">
+  <div className="social-icons flex space-x-6 mt-8 justify-start px-9">
     {[
       { href: "https://facebook.com", icon: <FacebookOutlined className="text-2xl text-amber-800" /> },
       { href: "https://twitter.com", icon: <TwitterOutlined className="text-2xl text-amber-800" /> },

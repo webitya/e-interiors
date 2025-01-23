@@ -1,3 +1,4 @@
+import FooterEl from "../FooterEl"
 import Navbar from "../Navbar"
 
 
@@ -6,6 +7,7 @@ const LayoutEl=(data)=>{
         <>
         <Navbar/>
         {data.children}
+        <FooterEl/>
         </>
     )
 }
