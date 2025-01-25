@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FaTruck } from 'react-icons/fa';  // Importing the truck icon
 import { MenuOutlined, FacebookOutlined, TwitterOutlined, InstagramOutlined } from '@ant-design/icons';
 import { Drawer, Menu } from 'antd';
 import "./Navbar.css";
@@ -63,14 +64,14 @@ const Navbar = () => {
               >
                 {path === '/' ? 'Home' : path.split('/')[1].replace('-', ' ')}
               </Link>
-              {isActive(path) && <img src="/active.svg" alt="Active" className="absolute -right-6 top-0 w-6 h-6" />}
+              {isActive(path) && <img src="/iconHeader.svg" alt="Active" className="absolute -right-6 top-0 w-6 h-5" />}
             </li>
           ))}
         </ul>
       </div>
 
       {/* Social Icons */}
-      <div className="hidden md:flex social space-x-4">
+      {/* <div className="hidden md:flex social space-x-4">
         {[
           { href: "https://facebook.com", icon: <FacebookOutlined className="text-xl hover:text-amber-800 transition duration-300" /> },
           { href: "https://twitter.com", icon: <TwitterOutlined className="text-xl hover:text-amber-800 transition duration-300" /> },
@@ -80,7 +81,16 @@ const Navbar = () => {
             {social.icon}
           </a>
         ))}
-      </div>
+      </div> */}
+      <div className="hidden md:flex">
+      <a
+        href="#features"
+        className="inline-flex items-center px-6 py-3 text-white bg-[#e23744] hover:bg-[#cc1f35] font-medium rounded-full shadow-md transition duration-300"
+      >
+        <FaTruck className="mr-2" size={20} />  {/* Adding the truck icon with margin */}
+        Contact Us Now
+      </a>
+    </div>
 
       {/* Mobile Hamburger Menu */}
       <div className="md:hidden">

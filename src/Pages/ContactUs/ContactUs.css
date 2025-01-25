@@ -1,0 +1,22 @@
+.contact-us-container {
+    max-width:100%;
+    margin: 0 auto;
+  }
+  
+  .btn-submit {
+    background-color: #D63E2C; /* Pink */
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit:hover {
+    background-color: #BF2E24; /* Darker Pink */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr; /* Stack on small screens */
+    }
+  }
+  

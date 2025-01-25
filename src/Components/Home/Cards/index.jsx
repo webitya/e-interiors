@@ -1,47 +1,31 @@
 import React, { useState } from 'react';
-import { FaWhatsapp } from 'react-icons/fa'; // Importing WhatsApp icon
+import { FaWhatsapp, FaTruck, FaHeadphonesAlt, FaCertificate } from 'react-icons/fa'; // Importing necessary icons
 
 const LuxuryCards = () => {
   const initialCardsData = [
     {
-      image: './cars_img.jpg',
-      title: 'Living Spaces',
-      description: 'Elegant designs for modern living.',
+      image: '/1.jpg',
+      title: 'Fast Delivery',
+      description: 'Get your project completed and delivered in record time.',
+      icon: <FaTruck className="text-[#e23744]" />,
     },
     {
-      image: './cars_img.jpg',
-      title: 'Office Spaces',
-      description: 'Functional and stylish office interiors.',
+      image: '/2.jpg',
+      title: '24/7 Support',
+      description: 'We are available round the clock to assist you.',
+      icon: <FaHeadphonesAlt className="text-[#e23744]" />,
     },
     {
-      image: './cars_img.jpg',
-      title: 'Bedrooms',
-      description: 'Luxurious bedrooms for restful nights.',
+      image: '/3.jpg',
+      title: 'Best Quality',
+      description: 'Only the finest materials and designs for your spaces.',
+      icon: <FaCertificate className="text-[#e23744]" />,
     },
     {
-      image: './cars_img.jpg',
-      title: 'Kitchens',
-      description: 'State-of-the-art kitchens with elegance.',
-    },
-    {
-      image: './cars_img.jpg',
-      title: 'Bathrooms',
-      description: 'Opulent bathrooms with modern aesthetics.',
-    },
-    {
-      image: './cars_img.jpg',
-      title: 'Outdoor Spaces',
-      description: 'Stylish outdoor designs for a peaceful retreat.',
-    },
-    {
-      image: './cars_img.jpg',
-      title: 'Luxury Hotels',
-      description: 'World-class designs for hospitality.',
-    },
-    {
-      image: './cars_img.jpg',
-      title: 'Commercial Interiors',
-      description: 'Modern designs for business spaces.',
+      image: '/4.jpg',
+      title: 'Luxury Projects',
+      description: 'Explore our portfolio of luxury residential and commercial projects.',
+      icon: <FaTruck className="text-[#e23744]" />,
     },
   ];
 
@@ -62,20 +46,23 @@ const LuxuryCards = () => {
   };
 
   return (
-    <div className="py-12 bg-gradient-to-b from-white to-gray-100 px-4">
-      <h1 className="text-4xl font-serif text-center text-yellow-500 mb-12">Explore Our Luxurious Interiors</h1>
+    <div className="py-12 bg-gradient-to-b from-white to-[#f5f5f5] px-4">
+      <h1 className="text-4xl font-serif text-center text-[#e23744] mb-12">Explore Our Premium Services</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {initialCardsData.slice(0, visibleCards).map((card, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+          <div key={index} className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
             <img src={card.image} alt={card.title} className="w-full h-60 object-cover" />
             <div className="p-4 text-center">
-              <h2 className="text-xl font-medium text-gray-800 mb-2">{card.title}</h2>
+              <div className="flex justify-center items-center mb-3">
+                {card.icon}
+                <h2 className="text-xl font-medium text-[#000000] ml-2">{card.title}</h2>
+              </div>
               <p className="text-gray-600 text-sm mb-4">{card.description}</p>
-              <div className="flex justify-center space-x-2">
+              <div className="flex justify-center space-x-4">
                 {/* Enquiry Button */}
                 <button
                   onClick={() => handleEnquiryClick(card.title)}
-                  className="bg-blue-500 text-white text-sm py-1 px-3 rounded transition hover:bg-blue-400"
+                  className="bg-[#e23744] text-white text-sm py-1 px-3 rounded transition hover:bg-[#cc1f35]"
                 >
                   Enquiry Now
                 </button>
@@ -83,7 +70,7 @@ const LuxuryCards = () => {
                 {/* WhatsApp Button */}
                 <button
                   onClick={() => handleWhatsAppClick(`${card.title}: ${card.description}`)}
-                  className="bg-green-500 text-white text-sm py-1 px-3 rounded transition hover:bg-green-400"
+                  className="bg-[#25d366] text-white text-sm py-1 px-3 rounded transition hover:bg-[#128c7e]"
                 >
                   <FaWhatsapp className="inline-block mr-1" />
                   WhatsApp
@@ -99,12 +86,23 @@ const LuxuryCards = () => {
         <div className="text-center mt-8">
           <button
             onClick={handleLoadMore}
-            className="bg-yellow-500 text-white py-2 px-4 text-sm font-medium rounded shadow-md hover:bg-yellow-400 transition"
+            className="bg-[#e23744] text-white py-2 px-4 text-sm font-medium rounded shadow-md hover:bg-[#cc1f35] transition"
           >
             Load More
           </button>
         </div>
       )}
+
+      {/* Full-Width Button "Get Delivery Now" */}
+      <div className="mt-12">
+        <button
+          onClick={() => alert("Get delivery now")}
+          className="w-full bg-[#e23744] text-white py-4 text-lg font-medium flex items-center justify-center space-x-2 rounded transition hover:bg-[#cc1f35]"
+        >
+          <FaTruck className="text-white text-xl" />
+          <span>Get Delivery Now</span>
+        </button>
+      </div>
     </div>
   );
 };
